@@ -1,0 +1,63 @@
+<h1>Add New Patient</h1>
+
+<form (ngSubmit)="onSubmit()">
+  <input
+    type="text"
+    [(ngModel)]="patient.id"
+    name="id"
+    placeholder="Enter Patient ID"
+  />
+  <input
+    type="text"
+    [(ngModel)]="patient.status"
+    name="status"
+    placeholder="Enter Patient Status"
+  />
+  <input
+    type="text"
+    [(ngModel)]="patient.timeframe"
+    name="timeframe"
+    placeholder="Enter Patient Timeframe"
+  />
+  <input
+    type="text"
+    [(ngModel)]="patient.dob"
+    name="dob"
+    placeholder="Enter Patient DOB"
+  />
+  <input
+    type="text"
+    [(ngModel)]="patient.race"
+    name="race"
+    placeholder="Enter Patient Race"
+  />
+  <input
+    type="text"
+    [(ngModel)]="patient.gender"
+    name="gender"
+    placeholder="Enter Patient Gender"
+  />
+  <input
+    type="text"
+    [(ngModel)]="patient.smokingStatus"
+    name="smokingStatus"
+    placeholder="Enter Patient Smoking Status"
+  />
+  <input
+    type="text"
+    [(ngModel)]="patient.icd10"
+    name="icd10"
+    placeholder="Enter Patient ICD10"
+  />
+  <input type="submit" value="Send" />
+</form>
+
+<div>
+  <h1>Response</h1>
+
+  <p *ngFor="let detail of patientDetails">
+    {{ detail.id }}
+    {{ detail.disease }}
+    {{ detail.risk }}
+  </p>
+</div>
