@@ -53,6 +53,37 @@
 </form>
 
 <div>
+  <h1>All Patient</h1>
+  <form (ngSubmit)="onSubmit2()">
+    <input type="submit" value="Click here to get patient!">
+  </form>
+</div>
+
+
+<div>
+  <h1>Patient Details</h1>
+
+  <p *ngFor="let detail of listpatient">
+    {{ detail.id }}
+    {{ detail.status }}
+    {{ detail.timeframe }}
+    {{ detail.risk }}
+    {{ detail.dob }}
+    {{ detail.race }}
+    {{ detail.gender }}
+    {{ detail.smokingStatus }}
+    {{ detail.icd10 }}
+
+  </p>
+</div>
+
+<div>
+  <form (ngSubmit)="onSubmit3()">
+    <input type="submit" value="Check Disease and Risk for all Patient">
+  </form>
+</div>
+
+<div>
   <h1>Response</h1>
 
   <p *ngFor="let detail of patientDetails">
@@ -61,3 +92,5 @@
     {{ detail.risk }}
   </p>
 </div>
+
+
