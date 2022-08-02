@@ -39,7 +39,6 @@ export class PatientService {
   }
 
   sendAllPatient(listOfPatient:ListofPatient): Observable<Disease[]>{
-    const headers= {'content-type':'application/json'};
     return this.httpClient.post<Disease[]>(`${this.baseurl5}`, listOfPatient,
    );
   }
