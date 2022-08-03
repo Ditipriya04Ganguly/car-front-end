@@ -20,6 +20,7 @@ export class PatientService {
   private baseurl3 = 'http://localhost:8080/addpatient';
   private baseurl4 = 'http://localhost:8080/getpatient';
   private baseurl5 = "http://localhost:8080/patient";
+  private baseurl6 = 'http://localhost:8080/patients';
   constructor(private httpClient: HttpClient) {}
   getPatientList(): Observable<Patient[]> {
     return this.httpClient
@@ -39,9 +40,15 @@ export class PatientService {
   }
 
   sendAllPatient(listOfPatient:ListofPatient): Observable<Disease[]>{
-    return this.httpClient.post<Disease[]>(`${this.baseurl5}`, listOfPatient,
+    return this.httpClient.post<Disease[]>(`${this.baseurl6}`, listOfPatient,
    );
   }
+
+  sendOnePatient(patient:Patient): Observable<Disease[]>{
+    return this.httpClient.post<Disease[]>(`${this.baseurl5}`, patient,
+   );
+  }
+
 }
 interface GetResponse {
   listofpatient: Patient[];

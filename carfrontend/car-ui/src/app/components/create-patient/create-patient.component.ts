@@ -26,6 +26,8 @@ export class CreatePatientComponent implements OnInit {
   onSubmit() {
     //this.savePatient();
     this.addPatient();
+    this.getAllPatient();
+    this.getAllDiseaseAndRisk1();
   }
 
   onSubmit2(){
@@ -58,9 +60,15 @@ getAllPatient(){
 }
 
 getAllDiseaseAndRisk(){
-  const body= JSON.stringify(this.listofpatient);
-    this.listofpatient=JSON.parse(body);
+  //const body= JSON.stringify(this.listofpatient);
+    //this.listofpatient=JSON.parse(body);
   this.patientService.sendAllPatient(this.listofpatient).subscribe((response)=>{
+    this.patientDetails=response;
+  })
+}
+
+getAllDiseaseAndRisk1(){
+  this.patientService.sendOnePatient(this.patient).subscribe((response)=>{
     this.patientDetails=response;
   })
 }

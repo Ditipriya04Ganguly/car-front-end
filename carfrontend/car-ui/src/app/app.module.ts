@@ -7,12 +7,16 @@ import { PatientListComponent } from './components/patient-list/patient-list.com
 import { PatientService } from './services/patient.service';
 import { CreatePatientComponent } from './components/create-patient/create-patient.component';
 import { FormsModule } from '@angular/forms';
+import { MenuComponent } from './components/menu/menu.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PatientListComponent,
-    CreatePatientComponent
+    CreatePatientComponent,
+    MenuComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
