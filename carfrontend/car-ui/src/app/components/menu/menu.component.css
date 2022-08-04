@@ -1,0 +1,9 @@
+#navbarNav{
+  padding-left: 800px;
+}
+
+.menu-list{
+  justify-content: space-between;
+  width: 100%;
+}
+
